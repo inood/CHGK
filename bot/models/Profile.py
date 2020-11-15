@@ -13,6 +13,9 @@ class Profile(models.Model):
     def __str__(self):
         return f'#{self.external_id} {self.name}'
 
+    def message_count(self):
+        return self.profile_message.count()
+
     class Meta:
         verbose_name = 'Профиль'
         verbose_name_plural = 'Профили'

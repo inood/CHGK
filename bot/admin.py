@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from bot.models import Profile, Message
+from bot.models import *
 from .forms import ProfileAmdinFroms
 
 
@@ -14,7 +14,21 @@ class ProfileAdmin(admin.ModelAdmin):
 class MessageAdmin(admin.ModelAdmin):
     list_display = ['id', 'profile', 'text', 'create_at']
     list_filter = ['profile', 'create_at']
-    pass
-    # def get_queryset(self, request):
-    #     return
+
+
+@admin.register(Game)
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name']
+
+
+@admin.register(Question)
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'game']
+    list_filter = ['game']
+
+
+@admin.register(Answer)
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ['id', 'question', 'name']
+    list_filter = ['question']
 

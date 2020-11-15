@@ -6,6 +6,7 @@ class Message(models.Model):
         to='bot.Profile',
         verbose_name='Профиль',
         on_delete=models.PROTECT,
+        related_name='profile_message'
     )
     text = models.TextField(
         verbose_name='текст'
